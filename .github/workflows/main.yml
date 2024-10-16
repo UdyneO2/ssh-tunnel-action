@@ -8,7 +8,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      
+    - name: Display Run Parameters
+      run: |
+       git clone https://gitlab.com/UdyneOS/android_device_realme.git
+       git clone https://github.com/ShivamKumarJha/android_tools.git
+       cd android_tools
+       chmod +x setup.sh
+       sudo bash setup.sh
+       
     - name: Setup tunnel
       uses: udyneo2/ssh-tunnel-action@main
       with:
